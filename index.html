@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Грузоперевозки по России и СНГ | Транспортная компания</title>
+    <meta name="description" content="Профессиональные грузоперевозки по России и СНГ. Быстро, надежно, по доступным ценам.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .map-container {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="bg-blue-600 text-white p-2 rounded-lg mr-3">
+                    <i class="fas fa-truck text-2xl"></i>
+                </div>
+                <h1 class="text-xl font-bold text-blue-800">ГрузоПеревозки<span class="text-orange-500">36</span></h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium">О компании</a>
+                <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium">Услуги</a>
+                <a href="#advantages" class="text-gray-700 hover:text-blue-600 font-medium">Преимущества</a>
+                <a href="#calculator" class="text-gray-700 hover:text-blue-600 font-medium">Калькулятор</a>
+                <a href="#contacts" class="text-gray-700 hover:text-blue-600 font-medium">Контакты</a>
+            </nav>
+            
+            <div class="hidden md:block">
+                <a href="tel:+78001234567" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition duration-300">
+                    <i class="fas fa-phone mr-2"></i>8 (800) 123-45-67
+                </a>
+            </div>
+            
+            <button class="md:hidden text-gray-700" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-white py-4 px-4 shadow-lg" id="mobile-menu">
+            <div class="flex flex-col space-y-4">
+                <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium">О компании</a>
+                <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium">Услуги</a>
+                <a href="#advantages" class="text-gray-700 hover:text-blue-600 font-medium">Преимущества</a>
+                <a href="#calculator" class="text-gray-700 hover:text-blue-600 font-medium">Калькулятор</a>
+                <a href="#contacts" class="text-gray-700 hover:text-blue-600 font-medium">Контакты</a>
+                <a href="tel:+78001234567" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium text-center transition duration-300">
+                    <i class="fas fa-phone mr-2"></i>8 (800) 123-45-67
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center animate-fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Грузоперевозки по России и СНГ</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Профессиональные транспортные услуги с гарантией сохранности груза и соблюдением сроков доставки</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#calculator" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-bold text-lg transition duration-300">
+                    Рассчитать стоимость
+                </a>
+                <a href="#contacts" class="bg-transparent hover:bg-white hover:text-blue-800 text-white border-2 border-white px-8 py-3 rounded-lg font-bold text-lg transition duration-300">
+                    Оставить заявку
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-800 mb-4">О нашей компании</h2>
+                <div class="w-20 h-1 bg-orange-500 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                         alt="Грузовой транспорт нашей компании" 
+                         class="rounded-lg shadow-lg w-full">
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Мы работаем с 2010 года</h3>
+                    <p class="text-gray-600 mb-4">Наша компания специализируется на грузоперевозках по всей территории России и стран СНГ. За годы работы мы перевезли более 10 000 грузов различной сложности и габаритов.</p>
+                    <p class="text-gray-600 mb-6">Мы ценим каждого клиента и гарантируем индивидуальный подход к каждому заказу. Наши специалисты помогут подобрать оптимальный вариант транспортировки вашего груза.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <div class="text-blue-600 mb-2">
+                                <i class="fas fa-truck-moving text-3xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800">500+</h4>
+                            <p class="text-gray-600 text-sm">Единиц техники</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <div class="text-blue-600 mb-2">
+                                <i class="fas fa-map-marked-alt text-3xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800">150+</h4>
+                            <p class="text-gray-600 text-sm">Направлений</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <div class="text-blue-600 mb-2">
+                                <i class="fas fa-users text-3xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800">10 000+</h4>
+                            <p class="text-gray-600 text-sm">Довольных клиентов</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <div class="text-blue-600 mb-2">
+                                <i class="fas fa-boxes text-3xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-800">50 000+</h4>
+                            <p class="text-gray-600 text-sm">Тонн груза</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-800 mb-4">Наши услуги</h2>
+                <div class="w-20 h-1 bg-orange-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-truck text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Междугородние перевозки</h3>
+                        <p class="text-gray-600 mb-4">Быстрая и безопасная доставка грузов между городами России. Оптимальные маршруты и контроль на всех этапах.</p>
+                        <a href="#calculator" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">
+                            Рассчитать стоимость
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-boxes text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Сборные грузы</h3>
+                        <p class="text-gray-600 mb-4">Экономичная перевозка небольших партий грузов. Объединяем ваши грузы с другими для снижения стоимости.</p>
+                        <a href="#calculator" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">
+                            Рассчитать стоимость
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-couch text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Перевозка мебели</h3>
+                        <p class="text-gray-600 mb-4">Аккуратная транспортировка мебели с профессиональной упаковкой. Гарантия сохранности ваших вещей.</p>
+                        <a href="#calculator" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">
+                            Рассчитать стоимость
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-temperature-low text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Рефрижераторные перевозки</h3>
+                        <p class="text-gray-600 mb-4">Перевозка скоропортящихся грузов с соблюдением температурного режима. Контроль температуры 24/7.</p>
+                        <a href="#calculator" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">
+                            Рассчитать стоимость
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Страхование грузов</h3>
+                        <p class="text-gray-600 mb-4">Полное страхование груза на время перевозки. Работаем только с проверенными страховыми компаниями.</p>
+                        <a href="#calculator" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">
+                            Рассчитать стоимость
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-warehouse text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Ответственное хранение</h3>
+                        <p class="text-gray-600 mb-4">Складские услуги с контролем температуры и влажности. Охраняемые склады с круглосуточным видеонаблюдением.</p>
+                        <a href="#calculator" class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center">
+                            Рассчитать стоимость
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section id="advantages" class="py-16 bg-blue-800 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Почему выбирают нас</h2>
+                <div class="w-20 h-1 bg-orange-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Advantage 1 -->
+                <div class="bg-blue-700 p-6 rounded-lg shadow-lg">
+                    <div class="text-orange-500 mb-4">
+                        <i class="fas fa-clock text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Соблюдение сроков</h3>
+                    <p class="text-blue-100">98% грузов доставляются точно в срок. Мы тщательно планируем маршруты и контролируем процесс перевозки.</p>
+                </div>
+                
+                <!-- Advantage 2 -->
+                <div class="bg-blue-700 p-6 rounded-lg shadow-lg">
+                    <div class="text-orange-500 mb-4">
+                        <i class="fas fa-ruble-sign text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Доступные цены</h3>
+                    <p class="text-blue-100">Гибкая система ценообразования без скрытых платежей. Скидки для постоянных клиентов и крупных заказов.</p>
+                </div>
+                
+                <!-- Advantage 3 -->
+                <div class="bg-blue-700 p-6 rounded-lg shadow-lg">
+                    <div class="text-orange-500 mb-4">
+                        <i class="fas fa-user-shield text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Опытные водители</h3>
+                    <p class="text-blue-100">Все водители имеют стаж работы от 5 лет, регулярно проходят медосмотры и повышение квалификации.</p>
+                </div>
+                
+                <!-- Advantage 4 -->
+                <div class="bg-blue-700 p-6 rounded-lg shadow-lg">
+                    <div class="text-orange-500 mb-4">
+                        <i class="fas fa-lock text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Безопасность груза</h3>
+                    <p class="text-blue-100">Используем профессиональное крепление и упаковку. Весь транспорт оборудован системами GPS-мониторинга.</p>
+                </div>
+                
+                <!-- Advantage 5 -->
+                <div class="bg-blue-700 p-6 rounded-lg shadow-lg">
+                    <div class="text-orange-500 mb-4">
+                        <i class="fas fa-headset text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Круглосуточная поддержка</h3>
+                    <p class="text-blue-100">Наши менеджеры доступны 24/7 для решения любых вопросов. Быстро реагируем на изменения и форс-мажоры.</p>
+                </div>
+                
+                <!-- Advantage 6 -->
+                <div class="bg-blue-700 p-6 rounded-lg shadow-lg">
+                    <div class="text-orange-500 mb-4">
+                        <i class="fas fa-file-contract text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Юридическая чистота</h3>
+                    <p class="text-blue-100">Полный пакет документов для каждой перевозки. Все договоры соответствуют законодательству РФ.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-800 mb-4">Калькулятор стоимости перевозки</h2>
+                <div class="w-20 h-1 bg-orange-500 mx-auto"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-blue-800 text-white p-8">
+                        <h3 class="text-xl font-bold mb-6">Рассчитайте стоимость перевозки</h3>
+                        <p class="mb-6 text-blue-100">Заполните форму и получите предварительный расчет стоимости доставки вашего груза.</p>
+                        
+                        <div class="bg-blue-700 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2">Примерные тарифы:</h4>
+                            <ul class="text-sm space-y-1">
+                                <li><i class="fas fa-truck mr-2"></i>Грузовик 5т: 50 руб/км</li>
+                                <li><i class="fas fa-truck-moving mr-2"></i>Грузовик 10т: 70 руб/км</li>
+                                <li><i class="fas fa-temperature-low mr-2"></i>Рефрижератор: 90 руб/км</li>
+                                <li><i class="fas fa-boxes mr-2"></i>Сборный груз: от 30 руб/км</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 p-8">
+                        <form id="delivery-calculator">
+                            <div class="mb-4">
+                                <label for="distance" class="block text-gray-700 font-medium mb-2">Расстояние (км)</label>
+                                <input type="number" id="distance" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Например: 500" min="1" required>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="weight" class="block text-gray-700 font-medium mb-2">Вес груза (кг)</label>
+                                <input type="number" id="weight" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Например: 1000" min="1" required>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="service-type" class="block text-gray-700 font-medium mb-2">Тип услуги</label>
+                                <select id="service-type" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                    <option value="" disabled selected>Выберите тип услуги</option>
+                                    <option value="standard">Стандартная перевозка</option>
+                                    <option value="refrigerated">Рефрижераторная перевозка</option>
+                                    <option value="fragile">Хрупкий груз</option>
+                                    <option value="oversized">Негабаритный груз</option>
+                                    <option value="groupage">Сборный груз</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="additional-services" class="block text-gray-700 font-medium mb-2">Дополнительные услуги</label>
+                                <div class="space-y-2">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="form-checkbox text-blue-600" value="insurance">
+                                        <span class="ml-2 text-gray-700">Страхование груза (+5%)</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="form-checkbox text-blue-600" value="loading">
+                                        <span class="ml-2 text-gray-700">Погрузка/разгрузка (+3000 руб)</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="form-checkbox text-blue-600" value="packaging">
+                                        <span class="ml-2 text-gray-700">Упаковка (+2000 руб)</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <button type="button" id="calculate-btn" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                                Рассчитать стоимость
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div id="calculation-result" class="hidden bg-gray-100 p-6 border-t">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h4 class="font-bold text-lg text-gray-800">Итого:</h4>
+                            <p class="text-gray-600">Стоимость перевозки вашего груза</p>
+                        </div>
+                        <div id="total-cost" class="text-3xl font-bold text-blue-800">0 руб</div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <p class="text-sm text-gray-600">* Это предварительный расчет. Для точного расчета свяжитесь с нашим менеджером.</p>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <button id="order-btn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                            Оформить заявку
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-800 mb-4">Отзывы наших клиентов</h2>
+                <div class="w-20 h-1 bg-orange-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Иван Петров" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Иван Петров</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Перевезли мебель из Москвы в Сочи без единой царапины. Водитель был вежлив и аккуратен, груз пришел точно в срок. Буду обращаться еще!"</p>
+                    <div class="mt-4 text-sm text-gray-500">15 мая 2023</div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Елена Смирнова" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Елена Смирнова</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Работаем с этой компанией уже 3 года. Всегда пунктуальны, грузы приходят в идеальном состоянии. Особенно радует возможность отслеживания груза онлайн."</p>
+                    <div class="mt-4 text-sm text-gray-500">2 апреля 2023</div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Алексей Козлов" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Алексей Козлов</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Заказал перевозку оборудования для магазина. Все было сделано быстро и профессионально. Менеджер постоянно был на связи, решал все возникающие вопросы."</p>
+                    <div class="mt-4 text-sm text-gray-500">18 марта 2023</div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <button class="bg-white hover:bg-gray-100 text-blue-600 font-medium py-2 px-6 border border-blue-600 rounded-lg transition duration-300">
+                    Показать больше отзывов
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section id="contacts" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-800 mb-4">Контакты</h2>
+                <div class="w-20 h-1 bg-orange-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                    <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Наши контактные данные</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="text-blue-600 mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Адрес:</h4>
+                                    <p class="text-gray-600">г. Москва, ул. Транспортная, д. 36, офис 405</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-blue-600 mr-4 mt-1">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Телефоны:</h4>
+                                    <p class="text-gray-600">8 (800) 123-45-67 (бесплатно по РФ)</p>
+                                    <p class="text-gray-600">+7 (495) 123-45-67 (Москва)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-blue-600 mr-4 mt-1">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Email:</h4>
+                                    <p class="text-gray-600">info@gruzoperevozki36.ru</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-blue-600 mr-4 mt-1">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Режим работы:</h4>
+                                    <p class="text-gray-600">Пн-Пт: 9:00 - 18:00</p>
+                                    <p class="text-gray-600">Сб-Вс: выходной</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Форма обратной связи</h3>
+                        
+                        <form id="contact-form">
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Ваше имя</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Иван Иванов" required>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Телефон</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="+7 (999) 123-45-67" required>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="example@mail.ru" required>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Сообщение</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Опишите ваш груз и маршрут"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                                Отправить заявку
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-white p-4 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Мы на карте</h3>
+                        <div class="map-container rounded-lg overflow-hidden">
+                            <!-- Вставьте здесь код карты Google Maps или другого сервиса -->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.3737899197454!2d37.618423315930474!3d55.75370398055314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a5a738fa419%3A0x7c347d506f52311f!2z0JrRgNCw0YHQvdC-0Y_RgNGB0LosINCc0L7RgdC60LLQsA!5e0!3m2!1sru!2sru!4v1623750000000!5m2!1sru!2sru" 
+                                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-12 bg-blue-800 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6">Готовы к перевозке вашего груза?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Оставьте заявку прямо сейчас и получите индивидуальное предложение в течение 30 минут</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="tel:+78001234567" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-bold text-lg transition duration-300">
+                    <i class="fas fa-phone mr-2"></i>8 (800) 123-45-67
+                </a>
+                <a href="#contacts" class="bg-transparent hover:bg-white hover:text-blue-800 text-white border-2 border-white px-8 py-3 rounded-lg font-bold text-lg transition duration-300">
+                    Написать нам
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-600 text-white p-2 rounded-lg mr-3">
+                            <i class="fas fa-truck text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">ГрузоПеревозки<span class="text-orange-500">36</span></h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Профессиональные грузоперевозки по России и СНГ с 2010 года.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-vk text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-telegram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Услуги</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Междугородние перевозки</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Сборные грузы</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Перевозка мебели</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Рефрижераторные перевозки</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Компания</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">О нас</a></li>
+                        <li><a href="#advantages" class="text-gray-400 hover:text-white transition duration-300">Преимущества</a></li>
+                        <li><a href="#calculator" class="text-gray-400 hover:text-white transition duration-300">Калькулятор</a></li>
+                        <li><a href="#contacts" class="text-gray-400 hover:text-white transition duration-300">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Контакты</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-gray-400 mr-2 mt-1"></i>
+                            <span class="text-gray-400">г. Москва, ул. Транспортная, д. 36</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-gray-400 mr-2"></i>
+                            <span class="text-gray-400">8 (800) 123-45-67</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gray-400 mr-2"></i>
+                            <span class="text-gray-400">info@gruzoperevozki36.ru</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2023 ГрузоПеревозки36. Все права защищены.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-white text-sm transition duration-300">Политика конфиденциальности</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm transition duration-300">Договор оферты</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Modal -->
+    <div id="order-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">Оформление заявки</h3>
+                    <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <form id="order-form" class="space-y-4">
+                    <input type="hidden" id="modal-distance" value="">
+                    <input type="hidden" id="modal-weight" value="">
+                    <input type="hidden" id="modal-service" value="">
+                    <input type="hidden" id="modal-cost" value="">
+                    
+                    <div>
+                        <label for="modal-name" class="block text-gray-700 font-medium mb-2">Ваше имя</label>
+                        <input type="text" id="modal-name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    
+                    <div>
+                        <label for="modal-phone" class="block text-gray-700 font-medium mb-2">Телефон</label>
+                        <input type="tel" id="modal-phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    
+                    <div>
+                        <label for="modal-email" class="block text-gray-700 font-medium mb-2">Email</label>
+                        <input type="email" id="modal-email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    
+                    <div>
+                        <label for="modal-comment" class="block text-gray-700 font-medium mb-2">Комментарий</label>
+                        <textarea id="modal-comment" rows="3" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+                    
+                    <div class="pt-2">
+                        <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                            Отправить заявку
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6 text-center">
+            <div class="text-green-500 text-5xl mb-4">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Заявка отправлена!</h3>
+            <p class="text-gray-600 mb-6">Наш менеджер свяжется с вами в ближайшее время для уточнения деталей.</p>
+            <button id="close-success-modal" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition duration-300">
+                Закрыть
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Calculator functionality
+        document.getElementById('calculate-btn').addEventListener('click', function() {
+            const distance = parseFloat(document.getElementById('distance').value);
+            const weight = parseFloat(document.getElementById('weight').value);
+            const serviceType = document.getElementById('service-type').value;
+            
+            if (!distance || !weight || !serviceType) {
+                alert('Пожалуйста, заполните все обязательные поля');
+                return;
+            }
+            
+            // Base price calculation
+            let basePricePerKm;
+            switch(serviceType) {
+                case 'standard':
+                    basePricePerKm = 50;
+                    break;
+                case 'refrigerated':
+                    basePricePerKm = 90;
+                    break;
+                case 'fragile':
+                    basePricePerKm = 70;
+                    break;
+                case 'oversized':
+                    basePricePerKm = 80;
+                    break;
+                case 'groupage':
+                    basePricePerKm = 30;
+                    break;
+                default:
+                    basePricePerKm = 50;
+            }
+            
+            // Weight adjustment
+            const weightAdjustment = weight > 1000 ? (weight - 1000) * 0.5 : 0;
+            
+            // Additional services
+            let additionalCost = 0;
+            if (document.querySelector('input[value="insurance"]:checked')) {
+                additionalCost += (distance * basePricePerKm) * 0.05;
+            }
+            if (document.querySelector('input[value="loading"]:checked')) {
+                additionalCost += 3000;
+            }
+            if (document.querySelector('input[value="packaging"]:checked')) {
+                additionalCost += 2000;
+            }
+            
+            // Total cost
+            const totalCost = Math.round((distance * basePricePerKm) + weightAdjustment + additionalCost);
+            
+            // Display result
+            document.getElementById('total-cost').textContent = totalCost.toLocaleString('ru-RU') + ' руб';
+            document.getElementById('calculation-result').classList.remove('hidden');
+            
+            // Scroll to result
+            document.getElementById('calculation-result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+
+        // Order button in calculator
+        document.getElementById('order-btn').addEventListener('click', function() {
+            const distance = document.getElementById('distance').value;
+            const weight = document.getElementById('weight').value;
+            const serviceType = document.getElementById('service-type').value;
+            const totalCost = document.getElementById('total-cost').textContent;
+            
+            document.getElementById('modal-distance').value = distance;
+            document.getElementById('modal-weight').value = weight;
+            document.getElementById('modal-service').value = serviceType;
+            document.getElementById('modal-cost').value = totalCost;
+            
+            document.getElementById('order-modal').classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        });
+
+        // Close modal
+        document.getElementById('close-modal').addEventListener('click', function() {
+            document.getElementById('order-modal').classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        });
+
+        // Close success modal
+        document.getElementById('close-success-modal').addEventListener('click', function() {
+            document.getElementById('success-modal').classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        });
+
+        // Form submission
+        document.getElementById('order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would normally send the data to the server
+            // For demo purposes, we'll just show the success message
+            
+            document.getElementById('order-modal').classList.add('hidden');
+            document.getElementById('success-modal').classList.remove('hidden');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would normally send the data to the server
+            // For demo purposes, we'll just show the success message
+            
+            document.getElementById('success-modal').classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!document.getElementById('mobile-menu').classList.contains('hidden')) {
+                        document.getElementById('mobile-menu').classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=xzngrl/my-first-site" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
